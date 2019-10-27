@@ -1,0 +1,11 @@
+﻿  2048.c
+D:\Activities\Visual Studio\C语言基础\2048\2048.c(24,15): warning C4013:  “_getch”未定义；假设外部返回 int
+D:\Activities\Visual Studio\C语言基础\2048\2048.c(104,33): warning C4047:  “<”:“int *”与“int (*)[4]”的间接级别不同
+D:\Activities\Visual Studio\C语言基础\2048\2048.c(106,39): warning C4047:  “-”:“int *”与“int (*)[4]”的间接级别不同
+D:\Activities\Visual Studio\C语言基础\2048\2048.c(104,1): warning C4047:  “初始化”:“int *”与“int (*)[4]”的间接级别不同
+D:\Activities\Visual Studio\C语言基础\2048\2048.c(121): warning C4716:  “move_right”: 必须返回一个值
+2048.obj : error LNK2019: 无法解析的外部符号 _move_up，该符号在函数 _main 中被引用
+2048.obj : error LNK2019: 无法解析的外部符号 _move_down，该符号在函数 _main 中被引用
+2048.obj : error LNK2019: 无法解析的外部符号 _move_left，该符号在函数 _main 中被引用
+2048.obj : error LNK2019: 无法解析的外部符号 _fail_check，该符号在函数 _main 中被引用
+D:\Activities\Visual Studio\C语言基础\Debug\2048.exe : fatal error LNK1120: 4 个无法解析的外部命令
