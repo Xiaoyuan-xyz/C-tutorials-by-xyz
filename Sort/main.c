@@ -100,12 +100,36 @@ void quick_sort_1(int* arr, int len)
 	}
 }
 
+void swap_element(int* n1, int* n2)
+{
+	int temp = *n1;
+	*n1 = *n2;
+	*n2 = temp;
+}
+
+//这个函数只表示把原数组按第一个元素用交换的方式分为两组再分别排序
+void quick_sort_2(int* arr, int len)
+{
+	int low = 0, high = len;
+	int temp = arr[0];
+	while (1)
+	{
+		while (arr[++low] < temp && low < len - 1);
+		while (arr[--high] > temp);
+		if (low >= high)break;
+		swap_element(arr + low, arr + high);
+	}
+	swap_element(arr, arr + high);
+	insertion_sort(arr, high);
+	insertion_sort(arr + high + 1, len - high - 1);
+}
+
 int main()
 {
 	int test[] = { 4,1,5,2,3 };
 	printf("数组排序前：");
 	print_array(test, 5);
-	quick_sort_1(test, 5);
+	quick_sort_2(test, 5);
 	printf("数组排序后：");
 	print_array(test, 5);
 
@@ -122,12 +146,12 @@ int main()
 	int arr2[LEN];
 	memcpy(arr2, arr, LEN * sizeof(int));
 
-	quick_sort_1(arr, LEN);
-	printf("这是带分组的冒泡：");
+	quick_sort_2(arr, LEN);
+	printf("这是带分组的插排：");
 	print_array(arr, LEN);
 
-	bubble_sort(arr2, LEN);
-	printf("这只是普通的冒泡：");
+	insertion_sort(arr2, LEN);
+	printf("这只是普通的插排：");
 	print_array(arr2, LEN);
 	return 0;
 }
